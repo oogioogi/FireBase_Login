@@ -17,6 +17,7 @@
 		86AAB76325A076DF003C42CE /* AccountSignup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86AAB76225A076DF003C42CE /* AccountSignup.storyboard */; };
 		86AAB76625A0771D003C42CE /* AccountSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AAB76525A0771D003C42CE /* AccountSignupViewController.swift */; };
 		86AAB76925A077E9003C42CE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AAB76825A077E9003C42CE /* LoginViewController.swift */; };
+		86AAB76F25A0BE84003C42CE /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AAB76E25A0BE84003C42CE /* DeviceInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		86AAB76225A076DF003C42CE /* AccountSignup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountSignup.storyboard; sourceTree = "<group>"; };
 		86AAB76525A0771D003C42CE /* AccountSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSignupViewController.swift; sourceTree = "<group>"; };
 		86AAB76825A077E9003C42CE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		86AAB76E25A0BE84003C42CE /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,9 +93,9 @@
 		86AAB75125A0738C003C42CE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				86AAB75725A0755C003C42CE /* UserListViewController.swift */,
 				86AAB76525A0771D003C42CE /* AccountSignupViewController.swift */,
 				86AAB76825A077E9003C42CE /* LoginViewController.swift */,
+				86AAB75725A0755C003C42CE /* UserListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -108,6 +110,7 @@
 		86AAB75325A073AD003C42CE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				86AAB76E25A0BE84003C42CE /* DeviceInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86AAB73A25A07333003C42CE /* AppDelegate.swift in Sources */,
+				86AAB76F25A0BE84003C42CE /* DeviceInfo.swift in Sources */,
 				86AAB73C25A07333003C42CE /* SceneDelegate.swift in Sources */,
 				86AAB76625A0771D003C42CE /* AccountSignupViewController.swift in Sources */,
 				86AAB76925A077E9003C42CE /* LoginViewController.swift in Sources */,

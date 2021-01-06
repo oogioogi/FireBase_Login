@@ -18,9 +18,17 @@ class AccountSignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupUi()
+        
         self.userImageButton.addTarget(self, action: #selector(tappedUserImageButton), for: .touchUpInside)
-
+        self.accountButton.addTarget(self, action: #selector(tappedAccountButton), for: .touchUpInside)
+        self.loginButton.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
     }
     
     private func setupUi() {
@@ -42,10 +50,23 @@ class AccountSignupViewController: UIViewController {
         
         self.present(imagePickerController, animated: true, completion: nil)
     }
+    
+    @objc private func tappedAccountButton() {
+        print("회원 등록: ")
+    }
+    
+    @objc private func tappedLoginButton() {
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let loginViewController = storyboard.instantiateViewController(identifier: "LoginViewController")
+        
+        self.navigationController?.pushViewController(loginViewController, animated: true)
+    }
+    
 }
 
 
 // MARK: - UIImagePickerControllerDelegate,UINavigationControllerDelegate
+// 사진 편집후 동그란 원에 넣음.
 extension AccountSignupViewController: UINavigationControllerDelegate {
 
 }

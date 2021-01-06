@@ -18,10 +18,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         window.makeKeyAndVisible()
         
-        let storyboard = UIStoryboard(name: "AccountSignup", bundle: nil)
-        let accountSignUpViewController = storyboard.instantiateViewController(identifier: "AccountSignupViewController")
+        
+        let storyboard = UIStoryboard(name: "UserList", bundle: nil)
+        let userListViewcontroller = storyboard.instantiateViewController(identifier: "UserListViewController")
+        let navigationViewController = UINavigationController(rootViewController: userListViewcontroller)
+        window.rootViewController = navigationViewController
+        //let storyboard = UIStoryboard(name: "AccountSignup", bundle: nil)
+        //let accountSignUpViewController = storyboard.instantiateViewController(identifier: "AccountSignupViewController")
         //let navigationViewController = UINavigationController(rootViewController: accountSignUpViewController)
-        window.rootViewController = accountSignUpViewController
+        //window.rootViewController = navigationViewController
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

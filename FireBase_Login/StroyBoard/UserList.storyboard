@@ -18,18 +18,29 @@
                         <viewLayoutGuide key="safeArea" id="dTA-XT-om6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Tq7-vy-NCv"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Tq7-vy-NCv">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="lS9-ZF-pzm">
+                            <connections>
+                                <action selector="tappedLogOutButton:" destination="LvZ-4E-sRX" id="Odb-e7-pRN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="logOutButton" destination="lS9-ZF-pzm" id="LDe-Ti-5kr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efR-8l-DRf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="168" y="127"/>
+            <point key="canvasLocation" x="-49" y="127"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pf0-4L-Qeb">
             <objects>
                 <navigationController id="amH-E8-X0r" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xLC-WM-MOp">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="xLC-WM-MOp">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

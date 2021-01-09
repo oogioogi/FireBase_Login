@@ -16,6 +16,7 @@ class UserListViewController: UIViewController {
         super.viewDidLoad()
         
         setupUi()
+        confirmLoggedInUser()
     }
     
     private func setupUi() {
@@ -25,6 +26,33 @@ class UserListViewController: UIViewController {
         self.logOutButton.title = ""
         self.logOutButton.image = scaledImage
     }
+    
+    @IBAction func tappedLogoutButton(_ sender: UIBarButtonItem) {
+        do {
+            try Auth.auth().signOut()
+            pushAccountSignupViewController()
+        } catch let error {
+            print("로그 아웃 error : \(error.localizedDescription)")
+        }
+        
+    }
+    private func confirmLoggedInUser() {
+        if Auth.auth().currentUser?.uid == nil {
+            pushAccountSignupViewController()
+        }
+    }
+    
+    private func pushAccountSignupViewController() {
+        let storyboard = UIStoryboard(name: "AccountSignup", bundle: nil)
+        let accountSignupViewController = storyboard.instantiateViewController(identifier: "AccountSignupViewController")
+        let navigation = UINavigationController(rootViewController: accountSignupViewController)
+        
+        navigation.modalPresentationStyle = .fullScreen
+        
+        self.present(navigation, animated: true, completion: nil)
+    }
+    
+    
     
     @IBAction func tappedLogOutButton(_ sender: UIBarButtonItem) {
         print("Button : tappedLogOutButton")

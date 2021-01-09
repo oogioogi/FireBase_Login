@@ -8,21 +8,43 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--User List View Controller-->
+        <!--User-->
         <scene sceneID="0xH-Rx-a7s">
             <objects>
                 <viewController storyboardIdentifier="UserListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LvZ-4E-sRX" customClass="UserListViewController" customModule="FireBase_Login" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zd2-cp-5bZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="utF-Ft-e5J">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="2Sn-Iq-0Pl">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Sn-Iq-0Pl" id="Hze-Hg-C5b">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dTA-XT-om6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dTA-XT-om6" firstAttribute="trailing" secondItem="utF-Ft-e5J" secondAttribute="trailing" id="Et9-eH-ThG"/>
+                            <constraint firstItem="utF-Ft-e5J" firstAttribute="leading" secondItem="dTA-XT-om6" secondAttribute="leading" id="Rbp-fo-VhY"/>
+                            <constraint firstItem="utF-Ft-e5J" firstAttribute="top" secondItem="dTA-XT-om6" secondAttribute="top" id="VCH-dY-yYG"/>
+                            <constraint firstItem="dTA-XT-om6" firstAttribute="bottom" secondItem="utF-Ft-e5J" secondAttribute="bottom" id="nm2-WB-9AP"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Tq7-vy-NCv">
+                    <navigationItem key="navigationItem" title="User" id="Tq7-vy-NCv">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="lS9-ZF-pzm">
                             <connections>
-                                <action selector="tappedLogOutButton:" destination="LvZ-4E-sRX" id="Odb-e7-pRN"/>
+                                <action selector="tappedLogoutButton:" destination="LvZ-4E-sRX" id="pzb-Dg-6lF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -109,6 +109,14 @@
                                     <color key="titleColor" systemColor="systemBlueColor"/>
                                 </state>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="dkH-Ae-G2i">
+                                <rect key="frame" x="187" y="567.5" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9WP-de-3Or"/>
+                                    <constraint firstAttribute="width" constant="40" id="MDL-TN-8Qk"/>
+                                </constraints>
+                                <color key="color" systemColor="systemPinkColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yOX-cE-UTM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -116,15 +124,18 @@
                             <constraint firstItem="Xov-77-neV" firstAttribute="centerX" secondItem="HmI-rv-TlI" secondAttribute="centerX" id="1Jv-fg-9Nj"/>
                             <constraint firstItem="205-to-F1b" firstAttribute="top" secondItem="zoB-9A-aYo" secondAttribute="bottom" constant="60" id="1n2-2N-DKj"/>
                             <constraint firstItem="205-to-F1b" firstAttribute="centerX" secondItem="HmI-rv-TlI" secondAttribute="centerX" id="2S3-rY-1cN"/>
+                            <constraint firstItem="dkH-Ae-G2i" firstAttribute="centerX" secondItem="UdQ-xd-8K0" secondAttribute="centerX" id="5ua-rA-wis"/>
                             <constraint firstItem="UdQ-xd-8K0" firstAttribute="top" secondItem="205-to-F1b" secondAttribute="bottom" constant="60" id="Bhe-vU-g90"/>
                             <constraint firstItem="zoB-9A-aYo" firstAttribute="top" secondItem="yOX-cE-UTM" secondAttribute="top" constant="40" id="JR4-gv-pgG"/>
                             <constraint firstItem="UdQ-xd-8K0" firstAttribute="centerX" secondItem="HmI-rv-TlI" secondAttribute="centerX" id="Kwj-Uf-VGB"/>
+                            <constraint firstItem="dkH-Ae-G2i" firstAttribute="centerY" secondItem="UdQ-xd-8K0" secondAttribute="centerY" id="NDG-XS-xcD"/>
                             <constraint firstItem="Xov-77-neV" firstAttribute="top" secondItem="UdQ-xd-8K0" secondAttribute="bottom" constant="30" id="UeC-B4-f6e"/>
                             <constraint firstItem="zoB-9A-aYo" firstAttribute="centerX" secondItem="HmI-rv-TlI" secondAttribute="centerX" id="hQx-gU-8Ot"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="accountButton" destination="UdQ-xd-8K0" id="M8x-3B-p4P"/>
+                        <outlet property="activityIndicator" destination="dkH-Ae-G2i" id="3bG-Gd-hIB"/>
                         <outlet property="loginButton" destination="Xov-77-neV" id="rxG-cA-haZ"/>
                         <outlet property="userEmailTextField" destination="RHe-Xl-51n" id="IDd-Os-0PK"/>
                         <outlet property="userImageButton" destination="zoB-9A-aYo" id="JeQ-Vr-miX"/>
@@ -135,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LOe-U0-2qf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-578" y="112"/>
+            <point key="canvasLocation" x="-578.26086956521749" y="111.83035714285714"/>
         </scene>
     </scenes>
     <resources>
@@ -147,6 +158,9 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -19,6 +19,8 @@ class AccountSignupViewController: UIViewController {
     @IBOutlet weak var accountButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var whenKeyboardShowConstraint: NSLayoutConstraint!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +84,7 @@ class AccountSignupViewController: UIViewController {
         
         self.accountButton.layer.cornerRadius = 15
         self.loginButton.layer.cornerRadius = 15
+        
     }
     
     @objc private func tappedUserImageButton() {
@@ -94,15 +97,19 @@ class AccountSignupViewController: UIViewController {
     
     @objc private func tappedAccountButton() {
         print("회원 등록: ")
+        
         let image = userImageButton.imageView?.image ?? UIImage(named: "chat_2")
         guard let uploadingImage = image?.jpegData(compressionQuality: 0.3) else { return }
 
+        self.activityIndicator.startAnimating()
+        
         let randomImageName = UUID.init().uuidString
         let storageRef = Storage.storage().reference().child("profile_image").child(randomImageName)
 
         storageRef.putData(uploadingImage, metadata: nil) { (metadata, error) in
             if let error = error {
                 print(" 파이어 베이스에 이미지 업로딩을 실패했습니다!.: \(error) ")
+                self.activityIndicator.stopAnimating()
                 return
             }
 
@@ -111,6 +118,7 @@ class AccountSignupViewController: UIViewController {
             storageRef.downloadURL { (url, error) in
                 if let error = error {
                     print(" 이미지 URL를 다운로딩하는데 실패했습니다!.: \(error) ")
+                    self.activityIndicator.stopAnimating()
                     return
                 }
                 guard let urlString = url?.absoluteString else { return }
@@ -128,6 +136,7 @@ class AccountSignupViewController: UIViewController {
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let error = error {
                 print(" 파이어 베이스에 유저 등록을 실퍠 했습니다!.: \(error) ")
+                self.activityIndicator.stopAnimating()
                 return
             }
             print("회원 등록 성공 했습니다!")
@@ -137,13 +146,18 @@ class AccountSignupViewController: UIViewController {
             
             let docData = [
                 "email" : email,
-                "name" : userName
+                "name" : userName,
+                "creatAt" : Timestamp()
             ] as [String : Any]
+            
             Firestore.firestore().collection("users").document(uid).setData(docData) { (error) in
                 if let error = error {
                     print(" 파이어 베이스에 유저 등록을 실퍠 했습니다!.: \(error) ")
+                    self.activityIndicator.stopAnimating()
                     return
                 }
+                
+                self.activityIndicator.stopAnimating()
                 
                 self.dismiss(animated: true, completion: nil)
             }

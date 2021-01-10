@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		15F9CEA68B676B6CE2442294 /* Pods_FireBase_Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D9EBCB6B0CB3D335CFE61C /* Pods_FireBase_Login.framework */; };
+		8633045F25AAC03D00F019C9 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8633045D25AAC03D00F019C9 /* UserInfoTableViewCell.swift */; };
+		8633046025AAC03D00F019C9 /* UserInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8633045E25AAC03D00F019C9 /* UserInfoTableViewCell.xib */; };
 		8636BF7525A516210067DB13 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8636BF7425A516200067DB13 /* GoogleService-Info.plist */; };
 		8648F85225A5EA94001E16F7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8648F85125A5EA94001E16F7 /* Extensions.swift */; };
 		86AAB73A25A07333003C42CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AAB73925A07333003C42CE /* AppDelegate.swift */; };
@@ -21,10 +23,13 @@
 		86AAB76625A0771D003C42CE /* AccountSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AAB76525A0771D003C42CE /* AccountSignupViewController.swift */; };
 		86AAB76925A077E9003C42CE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AAB76825A077E9003C42CE /* LoginViewController.swift */; };
 		86AAB76F25A0BE84003C42CE /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AAB76E25A0BE84003C42CE /* DeviceInfo.swift */; };
+		86CDD53C25AA8239001C8DD1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CDD53B25AA8239001C8DD1 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6E5ABBD2ECD33378B9008BCD /* Pods-FireBase_Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireBase_Login.release.xcconfig"; path = "Target Support Files/Pods-FireBase_Login/Pods-FireBase_Login.release.xcconfig"; sourceTree = "<group>"; };
+		8633045D25AAC03D00F019C9 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
+		8633045E25AAC03D00F019C9 /* UserInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoTableViewCell.xib; sourceTree = "<group>"; };
 		8636BF7425A516200067DB13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		8648F85125A5EA94001E16F7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		86AAB73625A07333003C42CE /* FireBase_Login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireBase_Login.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +45,7 @@
 		86AAB76525A0771D003C42CE /* AccountSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSignupViewController.swift; sourceTree = "<group>"; };
 		86AAB76825A077E9003C42CE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		86AAB76E25A0BE84003C42CE /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		86CDD53B25AA8239001C8DD1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B6FFDB6D47BC491C96FE9E7E /* Pods-FireBase_Login.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireBase_Login.debug.xcconfig"; path = "Target Support Files/Pods-FireBase_Login/Pods-FireBase_Login.debug.xcconfig"; sourceTree = "<group>"; };
 		C4D9EBCB6B0CB3D335CFE61C /* Pods_FireBase_Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireBase_Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -140,6 +146,7 @@
 			children = (
 				86AAB76E25A0BE84003C42CE /* DeviceInfo.swift */,
 				8648F85125A5EA94001E16F7 /* Extensions.swift */,
+				86CDD53B25AA8239001C8DD1 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -147,6 +154,8 @@
 		86AAB75A25A075F6003C42CE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8633045D25AAC03D00F019C9 /* UserInfoTableViewCell.swift */,
+				8633045E25AAC03D00F019C9 /* UserInfoTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -221,6 +230,7 @@
 			files = (
 				86AAB75C25A0764D003C42CE /* Login.storyboard in Resources */,
 				86AAB75525A074E2003C42CE /* UserList.storyboard in Resources */,
+				8633046025AAC03D00F019C9 /* UserInfoTableViewCell.xib in Resources */,
 				86AAB74625A07334003C42CE /* LaunchScreen.storyboard in Resources */,
 				86AAB76325A076DF003C42CE /* AccountSignup.storyboard in Resources */,
 				86AAB74325A07334003C42CE /* Assets.xcassets in Resources */,
@@ -280,7 +290,9 @@
 				86AAB73A25A07333003C42CE /* AppDelegate.swift in Sources */,
 				86AAB76F25A0BE84003C42CE /* DeviceInfo.swift in Sources */,
 				86AAB73C25A07333003C42CE /* SceneDelegate.swift in Sources */,
+				8633045F25AAC03D00F019C9 /* UserInfoTableViewCell.swift in Sources */,
 				86AAB76625A0771D003C42CE /* AccountSignupViewController.swift in Sources */,
+				86CDD53C25AA8239001C8DD1 /* User.swift in Sources */,
 				86AAB76925A077E9003C42CE /* LoginViewController.swift in Sources */,
 				86AAB75825A0755C003C42CE /* UserListViewController.swift in Sources */,
 				8648F85225A5EA94001E16F7 /* Extensions.swift in Sources */,

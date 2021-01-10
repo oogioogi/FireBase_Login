@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--User-->
+        <!--User List View Controller-->
         <scene sceneID="0xH-Rx-a7s">
             <objects>
                 <viewController storyboardIdentifier="UserListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LvZ-4E-sRX" customClass="UserListViewController" customModule="FireBase_Login" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,11 +20,11 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="2Sn-Iq-0Pl">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="defaultCell" rowHeight="63" id="2Sn-Iq-0Pl">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Sn-Iq-0Pl" id="Hze-Hg-C5b">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -41,7 +41,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="User" id="Tq7-vy-NCv">
+                    <navigationItem key="navigationItem" id="Tq7-vy-NCv">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="lS9-ZF-pzm">
                             <connections>
                                 <action selector="tappedLogoutButton:" destination="LvZ-4E-sRX" id="pzb-Dg-6lF"/>
@@ -51,11 +51,12 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="logOutButton" destination="lS9-ZF-pzm" id="LDe-Ti-5kr"/>
+                        <outlet property="userListTableView" destination="utF-Ft-e5J" id="hBi-0p-Acb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efR-8l-DRf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-49" y="127"/>
+            <point key="canvasLocation" x="-49.275362318840585" y="126.5625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pf0-4L-Qeb">

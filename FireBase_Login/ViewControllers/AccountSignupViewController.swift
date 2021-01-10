@@ -140,31 +140,33 @@ class AccountSignupViewController: UIViewController {
                 return
             }
             print("회원 등록 성공 했습니다!")
-            
             guard let uid = result?.user.uid else { return }
             guard let userName = self.userNicknameTextField.text else { return }
             
-            let docData = [
-                "email" : email,
-                "name" : userName,
-                "creatAt" : Timestamp()
-            ] as [String : Any]
-            
-            Firestore.firestore().collection("users").document(uid).setData(docData) { (error) in
-                if let error = error {
-                    print(" 파이어 베이스에 유저 등록을 실퍠 했습니다!.: \(error) ")
-                    self.activityIndicator.stopAnimating()
-                    return
-                }
-                
+            self.userSetDataToFirebaseStore(email: email, uid: uid, username: userName)
+
+        }
+    }
+    
+    private func userSetDataToFirebaseStore(email: String, uid: String, username: String ) {
+
+        let docData = [
+            "email" : email,
+            "name" : username,
+            "creatAt" : Timestamp()
+        ] as [String : Any]
+        
+        Firestore.firestore().collection("users").document(uid).setData(docData) { (error) in
+            if let error = error {
+                print(" 파이어 베이스에 유저 등록을 실퍠 했습니다!.: \(error) ")
                 self.activityIndicator.stopAnimating()
-                
-                self.dismiss(animated: true, completion: nil)
+                return
             }
             
+            self.activityIndicator.stopAnimating()
+            
+            self.dismiss(animated: true, completion: nil)
         }
-        
-
     }
     
     @objc private func tappedLoginButton() {

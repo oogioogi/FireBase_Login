@@ -20,6 +20,7 @@ class UserListViewController: UIViewController {
     private var user: User? {
         didSet {
             navigationItem.title = user?.name
+            self.userListTableView.reloadData()
         }
     }
     
@@ -66,7 +67,7 @@ class UserListViewController: UIViewController {
         self.userDataGetListFromFirbaseStore()
     }
     
-    private func fetchLoginUserInfo() {
+    func fetchLoginUserInfo() {
         guard let userUid = Auth.auth().currentUser?.uid else { return }
         
         Firestore.firestore().collection("users").document(userUid).getDocument { (snapshot, error) in
@@ -78,7 +79,7 @@ class UserListViewController: UIViewController {
             let user = User(dic: dic)
             self.user = user
             
-            self.userListTableView.reloadData()
+            //self.userListTableView.reloadData()
             
         }
     }
@@ -118,12 +119,10 @@ extension UserListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserInfoTableViewCell") as? UserInfoTableViewCell else { return UITableViewCell() }
         cell.user = self.user
         return cell
     }
-    
     
 }
 
